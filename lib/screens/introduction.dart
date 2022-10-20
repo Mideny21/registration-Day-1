@@ -7,6 +7,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../utils/helpers.dart';
 import '../widgets/commons/custom_text_style.dart';
+import 'login.dart';
 
 class IntroductionScreen extends StatefulWidget {
   const IntroductionScreen({super.key});
@@ -17,8 +18,8 @@ class IntroductionScreen extends StatefulWidget {
 
 class _IntroductionScreenState extends State<IntroductionScreen> {
   final advertisements = [
-    'assets/red.jpg',
     'assets/teal.jpg',
+    'assets/red.jpg',
     'assets/white.jpg',
   ];
   final _pagecontroller = PageController();
@@ -31,7 +32,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: [
-            Container(
+            SizedBox(
               height: MediaQuery.of(context).size.height * 0.4,
               child: Stack(
                 alignment: Alignment.center,
@@ -122,7 +123,9 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                             ),
                             side:
                                 const BorderSide(color: Colors.blue, width: 2)),
-                        onPressed: () {},
+                        onPressed: () {
+                          nextScreen(context, const LoginScreen());
+                        },
                         child: const Text(
                           'Sign in',
                           style: googlebuttonTextStyle,
