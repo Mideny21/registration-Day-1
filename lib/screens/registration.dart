@@ -18,6 +18,8 @@ class RegistrationScreen extends StatefulWidget {
 class _RegistrationScreenState extends State<RegistrationScreen> {
   bool check = false;
   bool _toggleVisibility = true;
+  bool _toggleVisibility2 = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,15 +42,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             ),
             const SizedBox(height: 10),
             const AccountTitle(title: "Create", title2: "Account"),
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Your Email",
                   style: TextStyle(
                       fontSize: 14,
                       color: Colors.black,
+                      letterSpacing: 0.8,
                       fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 4),
@@ -58,15 +61,14 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                           borderRadius: BorderRadius.circular(20.0),
                         ),
                         fillColor: AppColors.backButtonField,
+                        labelText: '',
                         filled: true,
                         errorBorder: const UnderlineInputBorder(),
                         focusedErrorBorder: const UnderlineInputBorder(),
                         contentPadding: const EdgeInsets.all(6),
                         focusedBorder: const UnderlineInputBorder(
-                            borderSide:
-                                BorderSide(color: AppColors.buttonColor)),
-                        labelStyle:
-                            TextStyle(color: Colors.black54, fontSize: 16),
+                          borderSide: BorderSide(color: AppColors.buttonColor),
+                        ),
                         enabledBorder: const UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.transparent),
                         ),
@@ -129,7 +131,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   "Confirm Password",
                   style: TextStyle(
                       fontSize: 14,
@@ -153,7 +155,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       borderSide: BorderSide(color: Colors.transparent),
                     ),
                     suffixIcon: IconButton(
-                        icon: _toggleVisibility
+                        icon: _toggleVisibility2
                             ? const Icon(
                                 Icons.visibility_off,
                                 color: AppColors.buttonColor,
@@ -164,11 +166,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               ),
                         onPressed: () {
                           setState(() {
-                            _toggleVisibility = !_toggleVisibility;
+                            _toggleVisibility2 = !_toggleVisibility2;
                           });
                         }),
                   ),
-                  obscureText: _toggleVisibility,
+                  obscureText: _toggleVisibility2,
                 ),
               ],
             ),
@@ -259,10 +261,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     ],
                   )),
             ),
-            const SizedBox(height: 40),
-            Row(
-              children: [],
-            ),
+            const SizedBox(height: 30),
             Text.rich(TextSpan(
                 text: "Already have an account? ",
                 style: TextStyle(

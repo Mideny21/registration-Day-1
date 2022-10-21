@@ -98,13 +98,13 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
             const SizedBox(height: 40),
             Padding(
               padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10.0),
+                  const EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Expanded(
                     child: SizedBox(
-                        height: 60,
+                        height: 50,
                         child: ElevatedButton(
                             onPressed: () {
                               nextScreen(context, const RegistrationScreen());
@@ -115,7 +115,7 @@ class _IntroductionScreenState extends State<IntroductionScreen> {
                   const SizedBox(width: 20),
                   Expanded(
                     child: SizedBox(
-                      height: 60,
+                      height: 50,
                       child: OutlinedButton(
                         style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(
